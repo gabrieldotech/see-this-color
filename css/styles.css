@@ -181,7 +181,6 @@ input {
 }
 
 @media only screen and (max-width: 37.5em) {
-    /* Dispositivos com até 600px de largura */
     .container {
         width: 90%;
         max-width: none;
