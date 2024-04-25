@@ -130,11 +130,6 @@ function openModal() {
 }
 
 function closeModal() {
-    const modal = document.getElementById('modal-container');
-    modal.classList.remove('mostrar');
-}
-
-function closeModal() {
     const modalContainer = document.getElementById('modal-container');
     modalContainer.classList.remove('mostrar');
     modalContainer.classList.add('fechar-modal');
