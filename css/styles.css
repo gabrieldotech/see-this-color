@@ -53,6 +53,7 @@ body, html {
     min-height: 200px;
     background-color: #ffffff62;
     -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
     padding: 50px;
     border-radius: 10px;
 }
