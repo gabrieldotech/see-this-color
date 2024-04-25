@@ -122,66 +122,7 @@ const traducaoCores = {
     "🟫": "#8B4513",   
     "⬛": "#000000",    
     "⬜": "#FFFFFF"    
-};
-
-function getSaudacao() {
-    const agora = new Date();
-    const hora = agora.getHours();
-
-    let saudacao;
-
-    if (hora >= 5 && hora < 12) {
-        saudacao = "Bom Dia!";
-    } else if (hora >= 12 && hora < 18) {
-        saudacao = "Boa Tarde!";
-    } else {
-        saudacao = "Boa Noite!";
-    }
-
-    return saudacao;
 }
-
-function atualizarSaudacao() {
-    const saudacaoElemento = document.getElementById('saudacao');
-    const iconeSaudacao = saudacaoElemento.querySelector('.icone-saudacao');
-    const textoSaudacao = saudacaoElemento.querySelector('.texto-saudacao');
-    const saudacao = getSaudacao();
-    let icone;
-
-    switch (saudacao) {
-        case 'Bom Dia!':
-            icone = '<i class="fas fa-sun"></i>';
-            break;
-        case 'Boa Tarde!':
-            icone = '<i class="fas fa-sun"></i>';
-            break;
-        case 'Boa Noite!':
-            icone = '<i class="fas fa-moon"></i>';
-            break;
-        default:
-            icone = '';
-    }
-
-    iconeSaudacao.innerHTML = icone; 
-    textoSaudacao.textContent = saudacao; 
-
-    saudacaoElemento.classList.add('mostrar');
-
-    setTimeout(() => {
-        saudacaoElemento.classList.remove('mostrar');
-        saudacaoElemento.classList.add('sair');
-    }, 2000);
-}
-
-window.onload = function() {
-    atualizarSaudacao();
-
-    setInterval(() => {
-        atualizarSaudacao();
-    }, 10000);
-};
-
-
 
 function openModal() {
     const modal = document.getElementById('modal-container');
@@ -230,19 +171,6 @@ function color(input) {
         document.body.style.backgroundColor = input.value;
     }
 }
-
-function colorGradient() {
-    const input = document.getElementById('colorInput').value;
-    const colors = input.split(',').map(color => color.trim());
-
-    if (colors.length === 2) {
-        document.body.style.transition = "background 1s ease";
-        document.body.style.background = `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
-    } else {
-        document.body.style.background = "white";
-    }
-}
-
 
 function resetBackgroundColor() {
     document.body.style.transition = "background-color 1s ease";
