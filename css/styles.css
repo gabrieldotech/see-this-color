@@ -1,3 +1,4 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
 body, html {
     height: 100%;
@@ -8,18 +9,16 @@ body, html {
 }
 
 .btn {
-    padding: 5px 32px;
-    display: inline;
+    padding: 0.313rem 2rem; 
     border-radius: 20px;
     border: 3px solid;
     color: #111;
     background-color: #fff;
-    font-size: 20px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.5s;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 1.25rem;
+    left: 1.25rem;
     z-index: 1;
     transition: all 0.3s ease-in-out;
 }
@@ -27,7 +26,7 @@ body, html {
 .btn p {
     color: #353333;
     font-weight: bold;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .btn:hover {
@@ -40,7 +39,7 @@ body, html {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #0000004b;
+    background-color: rgba(0, 0, 0, 0.3); 
     z-index: 999;
     align-items: center;
     justify-content: center;
@@ -51,24 +50,25 @@ body, html {
     width: 60%;
     min-width: 400px;
     min-height: 200px;
-    background-color: #ffffff62;
+    background-color: #ffffff68;
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    padding: 50px;
+    padding: 2.5rem;
     border-radius: 10px;
+    position: relative;
 }
 
 .fechar {
-    top: 10px;
-    right: 10px; 
-    width: 30px;
-    height: 30px;
+    top: 0.625rem;
+    right: 0.625rem; 
+    width: 1.875rem;
+    height: 1.875rem;
     border-radius: 50%;
     border: none;
     background-color: #ff0000;
     color: #fff;
     font-weight: 700;
-    font-size: 14pt;
+    font-size: 0.875rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -77,8 +77,8 @@ body, html {
 }
 
 .modal h1 {
-    font-size: 50px;
-    margin-bottom: 24px;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
     font-weight: bold;
     margin-top: 0;
     background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
@@ -99,7 +99,7 @@ body, html {
 }
 
 .modal p {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 0;
     transform: translateX(-50px); 
@@ -147,11 +147,11 @@ body, html {
 
 input {
     width: 100%;
-    height: 50px;
+    height: 3.125rem;
     text-align: center;
     border: 3px solid;
     border-radius: 25px;
-    font-size: 20px;
+    font-size: 1.25rem; 
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -161,14 +161,14 @@ input {
     background-color: #fff;
     border: 3px solid;
     border-radius: 25px;
-    padding: 10px;
-    margin-left: 10px;
-    height: 18px;
+    padding: 0.625rem;
+    margin-left: 0.625rem;
+    height: 1.125rem;
 }
 
 .color-picker-btn i {
     color: #111;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .transition-out {
@@ -179,92 +179,94 @@ input {
     color: inherit;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 37.5em) {
+
     .container {
         width: 90%;
         max-width: none;
     }
 
     input {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .btn {
-        top: 10px;
-        left: 10px;
-        padding: 10px 20px;
-        font-size: 16px;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.625rem 1.25rem;
+        font-size: 1rem;
     }
 
     .modal {
         width: 90%;
         min-width: auto;
-        padding: 20px;
-        font-size: 16px;
+        padding: 1.25rem;
+        font-size: 1rem;
     }
 
     .modal h1 {
-        font-size: 32px;
+        font-size: 2rem;
     }
 
     .modal p {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .fechar {
-        top: 5px;
-        right: 5px;
-        width: 25px;
-        height: 25px;
-        font-size: 12px;
+        top: 0.3125rem;
+        right: 0.3125rem;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        font-size: 0.75rem;
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 64em) {
     .btn {
-        top: 15px;
-        left: 15px;
+        top: 0.9375rem;
+        left: 0.9375rem;
     }
 
     .modal {
         width: 80%;
-        padding: 40px;
+        padding: 1.875rem;
     }
 
     .fechar {
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
+        top: 0.625rem;
+        right: 0.625rem;
+        width: 1.875rem;
+        height: 1.875rem;
+        font-size: 0.875rem;
     }
 }
 
-@media only screen and (max-width: 600px) and (orientation: portrait) {
+@media only screen and (max-width: 37.5em) and (orientation: portrait) {
+    
     .btn {
-        top: 10px;
-        left: 10px;
-        padding: 10px 20px;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.625rem 1.25rem;
     }
 
     .modal {
         width: 90%;
-        padding: 30px;
+        padding: 1.875rem;
     }
 
     .fechar {
-        top: 5px;
-        right: 5px;
-        width: 25px;
-        height: 25px;
-        font-size: 12px;
+        top: 0.625rem;
+        right: 0.625rem;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        font-size: 0.75rem;
     }
 
     .modal h1 {
-        font-size: 30px;
+        font-size: 2rem;
     }
 
     .modal p {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 }
