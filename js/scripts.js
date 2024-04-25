@@ -12,7 +12,7 @@ const traducaoCores = {
     "azul escuro": "DarkBlue",
     "azul médio": "MediumBlue",
     "azul": "Blue",
-    "azul flor-de-milho": "#6495ed",
+    "azul flor-de-milho": "CornflowerBlue",
     "azul real": "RoyalBlue",
     "azul céu profundo": "DodgerBlue",
     "azul céu claro": "DeepSkyBlue",
@@ -32,7 +32,7 @@ const traducaoCores = {
     "verde esmeralda": "MediumSpringGreen",
     "verde água": "LightSeaGreen",
     "azul petróleo": "DarkSlateGray",
-    "azul petróleo": "#084d6e",
+    "azul petróleo": "DarkTurquoise",
     "turquesa": "Turquoise",
     "verde marinho médio": "MediumSeaGreen",
     "verde marinho": "SeaGreen",
@@ -124,6 +124,15 @@ const traducaoCores = {
     "⬜": "#FFFFFF"    
 }
 
+const colorPicker = document.getElementById("colorPicker");
+
+colorPicker.addEventListener("input", function() {
+
+    document.getElementById("colorInput").value = this.value;
+    
+    document.body.style.backgroundColor = this.value;
+});
+
 function openModal() {
     const modal = document.getElementById('modal-container');
     modal.classList.add('mostrar');
@@ -134,6 +143,7 @@ function closeModal() {
     modalContainer.classList.remove('mostrar');
     modalContainer.classList.add('fechar-modal');
 }
+
 
 function startColorEffect() {
     const colors = ["red", "blue", "green", "yellow", "orange", "purple", "black", "DarkOrange", "DeepPink", "Goldenrod", "Lime", "Aqua", "Crimson", "Chocolate", "Indigo", "Magenta"];
@@ -212,4 +222,3 @@ input.addEventListener('input', function () {
         }, 300); 
     }
 });
-
