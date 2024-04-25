@@ -122,7 +122,7 @@ const traducaoCores = {
     "🟫": "#8B4513",   
     "⬛": "#000000",    
     "⬜": "#FFFFFF"    
-}
+};
 
 function openModal() {
     const modal = document.getElementById('modal-container');
@@ -170,6 +170,27 @@ function color(input) {
         document.body.style.transition = "background-color 1s ease";
         document.body.style.backgroundColor = input.value;
     }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const colorPicker = document.getElementById('colorPicker');
+    const colorInput = document.getElementById('colorInput');
+    
+    colorPicker.addEventListener('input', function() {
+        const selectedColor = colorPicker.value;
+        document.body.style.backgroundColor = selectedColor;
+        
+        const decimalColor = hexToDecimal(selectedColor);
+        
+        colorInput.value = decimalColor;
+    });
+});
+
+function hexToDecimal(hexColor) {
+    const r = parseInt(hexColor.slice(1, 3), 16);
+    const g = parseInt(hexColor.slice(3, 5), 16);
+    const b = parseInt(hexColor.slice(5, 7), 16);
+    
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 function resetBackgroundColor() {
