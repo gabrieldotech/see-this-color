@@ -98,6 +98,24 @@ body, html {
 .modal p {
     font-size: 28px;
     font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    transform: translateX(-50px); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.mostrar .modal p {
+    animation: animate-text 0.5s ease forwards 0.1s;
+}
+
+@keyframes animate-text {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes animate-modal {
