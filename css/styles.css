@@ -136,18 +136,6 @@ input {
     color: inherit;
 }
 
-.footer {
-    background-color: #f0f0f0;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 @media only screen and (max-width: 600px) {
     .container {
         width: 90%;
