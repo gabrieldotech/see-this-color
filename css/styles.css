@@ -8,40 +8,6 @@ body, html {
     align-items: center;
 }
 
-.saudacao {
-    position: fixed;
-    top: 50%;
-    left: -200px; 
-    transform: translateY(-50%);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    font-size: 24px;
-    font-family: 'Arial', sans-serif;
-    transition: opacity 0.8s ease-in-out, left 0.8s ease-in-out; 
-}
-
-.mostrar {
-    opacity: 1;
-    left: 20px;
-}
-
-.sair {
-    opacity: 0;
-}
-
-.texto-saudacao {
-    display: inline-block;
-}
-
-.icone-saudacao {
-    display: inline-block;
-    margin-left: 10px; 
-    vertical-align: middle; 
-}
-
-
 .btn {
     padding: 0.313rem 2rem; 
     border-radius: 20px;
@@ -233,6 +199,7 @@ input {
 
     .modal {
         width: 90%;
+        min-width: auto;
         padding: 1.25rem;
         font-size: 1rem;
     }
@@ -252,14 +219,6 @@ input {
         height: 1.5625rem;
         font-size: 0.75rem;
     }
-
-    .saudacao {
-        font-size: 18px; 
-        padding: 15px; 
-        top: 30%; 
-        left: 20px;
-        transform: translateY(-50%); 
-    }   
 }
 
 @media only screen and (max-width: 64em) {
@@ -283,7 +242,7 @@ input {
 }
 
 @media only screen and (max-width: 37.5em) and (orientation: portrait) {
-    
+
     .btn {
         top: 1rem;
         left: 1rem;
@@ -309,13 +268,5 @@ input {
 
     .modal p {
         font-size: 1.125rem;
-    }
-
-    .saudacao {
-        font-size: 16px; 
-        padding: 10px;
-        top: 30%; 
-        left: 20px; 
-        transform: translateY(-50%); 
     }
 }
