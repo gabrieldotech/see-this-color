@@ -32,7 +32,7 @@ const traducaoCores = {
     "verde esmeralda": "MediumSpringGreen",
     "verde água": "LightSeaGreen",
     "azul petróleo": "DarkSlateGray",
-    "azul petróleo": "DarkTurquoise",
+    "azul petróleo": #084d6e,
     "turquesa": "Turquoise",
     "verde marinho médio": "MediumSeaGreen",
     "verde marinho": "SeaGreen",
