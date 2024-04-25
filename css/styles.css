@@ -52,7 +52,7 @@ body, html {
     min-width:400px;
     min-height: 200px;
     background-color: #ffffff62;
-    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
     padding: 50px;
     border-radius: 10px;
 }
