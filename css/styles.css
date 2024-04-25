@@ -1,0 +1,244 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 5px 32px;
+    display: inline;
+    border-radius: 20px;
+    border: 3px solid;
+    color: #111;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn p {
+    color: #353333;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+
+.btn:hover{
+   transform: scale(1.1);
+}
+
+.modal-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #0000004b;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal{
+    width: 60%;
+    min-width:400px;
+    min-height: 200px;
+    background-color: #ffffff62;
+    backdrop-filter: blur(40px);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.fechar{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+
+.modal h1{
+    font-size: 50px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    margin-top: 0;
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbowAnimation 1.8s infinite linear;
+    position: relative;
+}
+
+@keyframes rainbowAnimation {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+
+.modal p {
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes animate-modal {
+    from{
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.modal-container.mostrar{
+    display: flex;
+}
+
+.mostrar .modal{
+    animation: animate-modal .3s;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border: 3px solid;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.transition-out {
+    color: transparent;
+}
+
+.transition-in {
+    color: inherit;
+}
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        max-width: none; 
+    }
+
+    input {
+        font-size: 16px; 
+    }
+
+    .btn {
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .modal {
+        width: 90%;
+        min-width: auto;
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .modal h1 {
+        font-size: 32px;
+    }
+
+    .modal p {
+        font-size: 20px;
+    }
+
+    .fechar {
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .btn {
+        top: 15px;
+        left: 15px;
+    }
+
+    .modal {
+        width: 80%;
+        padding: 40px;
+    }
+
+    .fechar {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+    .btn {
+        top: 10px;
+        left: 10px;
+        padding: 10px 20px;
+    }
+
+    .modal {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .fechar {
+        top: 5px;
+        right: 5px;
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .modal h1 {
+        font-size: 30px;
+    }
+
+    .modal p {
+        font-size: 18px;
+    }
+}
+
+
+
+

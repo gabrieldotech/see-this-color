@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veja essa cor!</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon " href="/img/rainbow_image.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <input id="colorInput" placeholder="Escolha uma cor" spellcheck="false" autocomplete="off" onkeyup="color(this)" type="text">
+    </div>
+    <div onclick="openModal()" class="btn"><p>Sobre</p></div>
+    <div id="modal-container" class="modal-container">
+        <div class="modal">
+            <button class="fechar" id="fechar" onclick="closeModal()">X</button>
+            <h1>Bem-vindo!</h1>
+            <p>Seja bem-vindo ao nosso seletor de cores! Aqui você pode escolher as cores de fundo digitando o nome da cor em inglês, português ou até mesmo o código hexadecimal da cor.</p>
+            <p>Além disso, temos uma surpresa especial! Se você digitar as palavras-chave "party" ou "festa", uma animação divertida será acionada para tornar a sua experiência ainda mais especial!</p>
+            <p>Experimente agora mesmo e divirta-se!</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <h2 class="site-name">VEJA ESSA COR</h2>
+        <p class="development">Development by <br> Gabriel M. Ramos</p>
+    </footer>
+    <script src="/js/scripts.js"></script>  
+</body>
+</html>
