@@ -12,7 +12,7 @@ const traducaoCores = {
     "azul escuro": "DarkBlue",
     "azul médio": "MediumBlue",
     "azul": "Blue",
-    "azul flor-de-milho": "#6495ed",
+    "azul flor-de-milho": "CornflowerBlue",
     "azul real": "RoyalBlue",
     "azul céu profundo": "DodgerBlue",
     "azul céu claro": "DeepSkyBlue",
@@ -31,7 +31,7 @@ const traducaoCores = {
     "turquesa média": "MediumTurquoise",
     "verde esmeralda": "MediumSpringGreen",
     "verde água": "LightSeaGreen",
-    "azul petróleo": "#084d6e",
+    "azul petróleo": "DarkSlateGray",
     "azul petróleo": "DarkTurquoise",
     "turquesa": "Turquoise",
     "verde marinho médio": "MediumSeaGreen",
@@ -122,7 +122,7 @@ const traducaoCores = {
     "🟫": "#8B4513",   
     "⬛": "#000000",    
     "⬜": "#FFFFFF"    
-}
+};
 
 function getSaudacao() {
     const agora = new Date();
@@ -181,14 +181,7 @@ window.onload = function() {
     }, 10000);
 };
 
-const colorPicker = document.getElementById("colorPicker");
 
-colorPicker.addEventListener("input", function() {
-
-    document.getElementById("colorInput").value = this.value;
-    
-    document.body.style.backgroundColor = this.value;
-});
 
 function openModal() {
     const modal = document.getElementById('modal-container');
@@ -196,11 +189,9 @@ function openModal() {
 }
 
 function closeModal() {
-    const modalContainer = document.getElementById('modal-container');
-    modalContainer.classList.remove('mostrar');
-    modalContainer.classList.add('fechar-modal');
+    const modal = document.getElementById('modal-container');
+    modal.classList.remove('mostrar');
 }
-
 
 function startColorEffect() {
     const colors = ["red", "blue", "green", "yellow", "orange", "purple", "black", "DarkOrange", "DeepPink", "Goldenrod", "Lime", "Aqua", "Crimson", "Chocolate", "Indigo", "Magenta"];
@@ -240,6 +231,18 @@ function color(input) {
     }
 }
 
+function colorGradient() {
+    const input = document.getElementById('colorInput').value;
+    const colors = input.split(',').map(color => color.trim());
+
+    if (colors.length === 2) {
+        document.body.style.transition = "background 1s ease";
+        document.body.style.background = `linear-gradient(to right, ${colors[0]}, ${colors[1]})`;
+    } else {
+        document.body.style.background = "white";
+    }
+}
+
 
 function resetBackgroundColor() {
     document.body.style.transition = "background-color 1s ease";
@@ -249,7 +252,7 @@ function resetBackgroundColor() {
 const traducaoMensagens = {
     "party": "Have fun! ;)",
     "festa": "Se divirta! ;)",
-}
+};
 
 document.body.style.transition = "background-color 1s ease";
 
@@ -279,3 +282,8 @@ input.addEventListener('input', function () {
         }, 300); 
     }
 });
+
+function resetBackgroundColor() {
+    document.body.style.transition = "none";
+    document.body.style.backgroundColor = "white";
+}
