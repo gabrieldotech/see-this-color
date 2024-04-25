@@ -12,7 +12,7 @@ const traducaoCores = {
     "azul escuro": "DarkBlue",
     "azul médio": "MediumBlue",
     "azul": "Blue",
-    "azul flor-de-milho": "CornflowerBlue",
+    "azul flor-de-milho": #6495ed,
     "azul real": "RoyalBlue",
     "azul céu profundo": "DodgerBlue",
     "azul céu claro": "DeepSkyBlue",
