@@ -133,6 +133,19 @@ colorPicker.addEventListener("input", function() {
     document.body.style.backgroundColor = this.value;
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const colorInput = document.getElementById('color-input');
+    const colorPickerBtn = document.getElementById('color-picker-btn');
+    
+    colorPickerBtn.addEventListener('click', function() {
+        colorInput.click();
+    });
+    
+    colorInput.addEventListener('input', function() {
+        colorPickerBtn.style.backgroundColor = colorInput.value;
+    });
+});
+
 function openModal() {
     const modal = document.getElementById('modal-container');
     modal.classList.add('mostrar');
