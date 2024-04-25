@@ -1,3 +1,4 @@
+
 body, html {
     height: 100%;
     margin: 0;
@@ -17,8 +18,8 @@ body, html {
     cursor: pointer;
     transition: background-color 0.5s;
     position: absolute;
-    top: 20px; 
-    left: 20px; 
+    top: 20px;
+    left: 20px;
     z-index: 1;
     transition: all 0.3s ease-in-out;
 }
@@ -29,12 +30,11 @@ body, html {
     opacity: 0.7;
 }
 
-
-.btn:hover{
-   transform: scale(1.1);
+.btn:hover {
+    transform: scale(1.1);
 }
 
-.modal-container{
+.modal-container {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -47,18 +47,17 @@ body, html {
     display: none;
 }
 
-.modal{
+.modal {
     width: 60%;
-    min-width:400px;
+    min-width: 400px;
     min-height: 200px;
     background-color: #ffffff62;
-    -webkit-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
     padding: 50px;
     border-radius: 10px;
 }
 
-.fechar{
+.fechar {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -73,8 +72,7 @@ body, html {
     cursor: pointer;
 }
 
-
-.modal h1{
+.modal h1 {
     font-size: 50px;
     margin-bottom: 24px;
     font-weight: bold;
@@ -92,30 +90,33 @@ body, html {
     100% { filter: hue-rotate(360deg); }
 }
 
-
 .modal p {
     font-size: 28px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 @keyframes animate-modal {
-    from{
+    from {
         opacity: 0;
         transform: translate3d(0, -20px, 0);
     }
-
-    to{
+    to {
         opacity: 1;
         transform: translate3d(0, 0, 0);
     }
 }
 
-.modal-container.mostrar{
+.modal-container.mostrar {
     display: flex;
 }
 
-.mostrar .modal{
+.mostrar .modal {
     animation: animate-modal .3s;
+}
+
+.container {
+    align-items: center;
+    display: flex;
 }
 
 input {
@@ -129,6 +130,21 @@ input {
     transition: color 0.3s ease;
 }
 
+.color-picker-btn {
+    cursor: pointer;
+    background-color: #fff;
+    border: 3px solid;
+    border-radius: 25px;
+    padding: 10px;
+    margin-left: 10px;
+    height: 18px;
+}
+
+.color-picker-btn i {
+    color: #111;
+    font-size: 20px;
+}
+
 .transition-out {
     color: transparent;
 }
@@ -140,11 +156,11 @@ input {
 @media only screen and (max-width: 600px) {
     .container {
         width: 90%;
-        max-width: none; 
+        max-width: none;
     }
 
     input {
-        font-size: 16px; 
+        font-size: 16px;
     }
 
     .btn {
@@ -198,7 +214,6 @@ input {
     }
 }
 
-
 @media only screen and (max-width: 600px) and (orientation: portrait) {
     .btn {
         top: 10px;
@@ -227,7 +242,3 @@ input {
         font-size: 18px;
     }
 }
-
-
-
-
