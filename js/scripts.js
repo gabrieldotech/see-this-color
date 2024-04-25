@@ -124,6 +124,63 @@ const traducaoCores = {
     "⬜": "#FFFFFF"    
 }
 
+function getSaudacao() {
+    const agora = new Date();
+    const hora = agora.getHours();
+
+    let saudacao;
+
+    if (hora >= 5 && hora < 12) {
+        saudacao = "Bom Dia!";
+    } else if (hora >= 12 && hora < 18) {
+        saudacao = "Boa Tarde!";
+    } else {
+        saudacao = "Boa Noite!";
+    }
+
+    return saudacao;
+}
+
+function atualizarSaudacao() {
+    const saudacaoElemento = document.getElementById('saudacao');
+    const iconeSaudacao = saudacaoElemento.querySelector('.icone-saudacao');
+    const textoSaudacao = saudacaoElemento.querySelector('.texto-saudacao');
+    const saudacao = getSaudacao();
+    let icone;
+
+    switch (saudacao) {
+        case 'Bom Dia!':
+            icone = '<i class="fas fa-sun"></i>';
+            break;
+        case 'Boa Tarde!':
+            icone = '<i class="fas fa-sun"></i>';
+            break;
+        case 'Boa Noite!':
+            icone = '<i class="fas fa-moon"></i>';
+            break;
+        default:
+            icone = '';
+    }
+
+    iconeSaudacao.innerHTML = icone; 
+    textoSaudacao.textContent = saudacao; 
+
+    saudacaoElemento.classList.add('mostrar');
+
+    setTimeout(() => {
+        saudacaoElemento.classList.remove('mostrar');
+        saudacaoElemento.classList.add('sair');
+    }, 2000);
+}
+
+window.onload = function() {
+    atualizarSaudacao();
+
+    setInterval(() => {
+        atualizarSaudacao();
+    }, 10000);
+};
+
 const colorPicker = document.getElementById("colorPicker");
 
 colorPicker.addEventListener("input", function() {
