@@ -1,6 +1,7 @@
-
+/* Normalize CSS */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
+/* Estilos Base */
 body, html {
     height: 100%;
     margin: 0;
@@ -9,6 +10,7 @@ body, html {
     align-items: center;
 }
 
+/* Estilos do Botão */
 .btn {
     padding: 0.313rem 2rem; 
     border-radius: 20px;
@@ -34,6 +36,7 @@ body, html {
     transform: scale(1.1);
 }
 
+/* Estilos do Container Modal */
 .modal-container {
     width: 100vw;
     height: 100vh;
@@ -47,6 +50,7 @@ body, html {
     display: none;
 }
 
+/* Estilos do Modal */
 .modal {
     width: 60%;
     min-width: 400px;
@@ -59,6 +63,7 @@ body, html {
     position: relative;
 }
 
+/* Estilos do Botão Fechar */
 .fechar {
     top: 0.625rem;
     right: 0.625rem; 
@@ -77,6 +82,7 @@ body, html {
     position: absolute; 
 }
 
+/* Estilos do Título do Modal */
 .modal h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -90,15 +96,18 @@ body, html {
     position: relative;
 }
 
+/* Estilos de Texto em Negrito */
 .strong {
     font-weight: bold
 }
 
+/* Animação Arco-Íris */
 @keyframes rainbowAnimation {
     0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
 }
 
+/* Estilos do Parágrafo do Modal */
 .modal p {
     font-size: 1.75rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -107,6 +116,7 @@ body, html {
     transition: opacity 0.5s ease, transform 0.5s ease; 
 }
 
+/* Animação do Texto do Modal */
 .mostrar .modal p {
     animation: animate-text 0.5s ease forwards 0.1s;
 }
@@ -133,19 +143,23 @@ body, html {
     }
 }
 
+/* Mostrar o Container do Modal */
 .modal-container.mostrar {
     display: flex;
 }
 
+/* Animação de Mostrar o Modal */
 .mostrar .modal {
     animation: animate-modal .3s;
 }
 
+/* Estilos do Container */
 .container {
     align-items: center;
     display: flex;
 }
 
+/* Estilos do Input */
 input {
     width: 100%;
     height: 3.125rem; 
@@ -157,6 +171,7 @@ input {
     transition: color 0.3s ease;
 }
 
+/* Estilos do Botão Seletor de Cor */
 .color-picker-btn {
     cursor: pointer;
     background-color: #fff;
@@ -172,7 +187,7 @@ input {
     font-size: 1.25rem;
 }
 
-
+/* Estados de Transição */
 .transition-out {
     color: transparent;
 }
@@ -181,8 +196,8 @@ input {
     color: inherit;
 }
 
+/* Media Queries */
 @media only screen and (max-width: 37.5em) {
-    /* Dispositivos com até 600px de largura */
     .container {
         width: 90%;
         max-width: none;
