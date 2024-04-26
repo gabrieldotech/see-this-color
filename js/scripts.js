@@ -134,6 +134,76 @@ function closeModal() {
     modal.classList.remove('mostrar');
 }
 
+function hexToRgb(hexColor) {
+    hexColor = hexColor.replace('#', '');
+    const r = parseInt(hexColor.substring(0, 2), 16);
+    const g = parseInt(hexColor.substring(2, 4), 16);
+    const b = parseInt(hexColor.substring(4, 6), 16);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+function hexToHsl(hexColor) {
+    hexColor = hexColor.replace('#', '');
+    const r = parseInt(hexColor.substring(0, 2), 16) / 255;
+    const g = parseInt(hexColor.substring(2, 4), 16) / 255;
+    const b = parseInt(hexColor.substring(4, 6), 16) / 255;
+    const cmin = Math.min(r, g, b);
+    const cmax = Math.max(r, g, b);
+    const delta = cmax - cmin;
+    let h = 0, s = 0, l = 0;
+    if (delta === 0) {
+        h = 0;
+    } else if (cmax === r) {
+        h = ((g - b) / delta) % 6;
+    } else if (cmax === g) {
+        h = (b - r) / delta + 2;
+    } else {
+        h = (r - g) / delta + 4;
+    }
+    h = Math.round(h * 60);
+    if (h < 0) h += 360;
+    l = (cmax + cmin) / 2;
+    s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+    s = +(s * 100).toFixed(1);
+    l = +(l * 100).toFixed(1);
+    return `hsl(${h}, ${s}%, ${l}%)`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const colorPicker = document.getElementById('colorPicker');
+    const colorFormatSelect = document.getElementById('colorFormatSelect');
+    const colorInput = document.getElementById('colorInput');
+
+    colorPicker.addEventListener('input', function() {
+        updateColorInput();
+    });
+
+    colorFormatSelect.addEventListener('change', function() {
+        updateColorInput();
+    });
+
+    function updateColorInput() {
+        const selectedFormat = colorFormatSelect.value;
+        const colorValue = colorPicker.value;
+        const formattedColor = convertColorFormat(colorValue, selectedFormat);
+        colorInput.value = formattedColor;
+        document.body.style.backgroundColor = colorValue;
+    }
+
+    function convertColorFormat(color, format) {
+        switch (format) {
+            case 'hex':
+                return color;
+            case 'rgb':
+                return hexToRgb(color);
+            case 'hsl':
+                return hexToHsl(color);
+            default:
+                return color;
+        }
+    }
+});
+
 function startColorEffect() {
     const colors = ["red", "blue", "green", "yellow", "orange", "purple", "black", "DarkOrange", "DeepPink", "Goldenrod", "Lime", "Aqua", "Crimson", "Chocolate", "Indigo", "Magenta"];
     let currentIndex = 0;
@@ -171,27 +241,7 @@ function color(input) {
         document.body.style.backgroundColor = input.value;
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const colorPicker = document.getElementById('colorPicker');
-    const colorInput = document.getElementById('colorInput');
-    
-    colorPicker.addEventListener('input', function() {
-        const selectedColor = colorPicker.value;
-        document.body.style.backgroundColor = selectedColor;
-        
-        const decimalColor = hexToDecimal(selectedColor);
-        
-        colorInput.value = decimalColor;
-    });
-});
 
-function hexToDecimal(hexColor) {
-    const r = parseInt(hexColor.slice(1, 3), 16);
-    const g = parseInt(hexColor.slice(3, 5), 16);
-    const b = parseInt(hexColor.slice(5, 7), 16);
-    
-    return `rgb(${r}, ${g}, ${b})`;
-}
 
 function resetBackgroundColor() {
     document.body.style.transition = "background-color 1s ease";
