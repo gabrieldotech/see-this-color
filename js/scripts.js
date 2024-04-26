@@ -233,8 +233,3 @@ input.addEventListener('input', function () {
         }, 300); 
     }
 });
-
-function resetBackgroundColor() {
-    document.body.style.transition = "none";
-    document.body.style.backgroundColor = "white";
-}
