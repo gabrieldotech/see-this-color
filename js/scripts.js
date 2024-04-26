@@ -1,3 +1,4 @@
+// Mapeamento das cores em tons traduzidas, emojis e etc.
 const traducaoCores = {
     "preto": "black",
     "cinza escuro": "DarkGray",
@@ -124,6 +125,7 @@ const traducaoCores = {
     "⬜": "#FFFFFF"    
 };
 
+// Funções de abertura e fechamento do modal
 function openModal() {
     const modal = document.getElementById('modal-container');
     modal.classList.add('mostrar');
@@ -134,6 +136,7 @@ function closeModal() {
     modal.classList.remove('mostrar');
 }
 
+// Evento de para inicializar a funcionalidade do seletor de cores
 document.addEventListener('DOMContentLoaded', function() {
     const colorPicker = document.getElementById('colorPicker');
     const colorInput = document.getElementById('colorInput');
@@ -148,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Conversão de cor
 function hexToDecimal(hexColor) {
     const r = parseInt(hexColor.slice(1, 3), 16);
     const g = parseInt(hexColor.slice(3, 5), 16);
@@ -156,6 +160,7 @@ function hexToDecimal(hexColor) {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
+// Efeito de mudança de cor automática
 function startColorEffect() {
     const colors = ["red", "blue", "green", "yellow", "orange", "purple", "black", "DarkOrange", "DeepPink", "Goldenrod", "Lime", "Aqua", "Crimson", "Chocolate", "Indigo", "Magenta"];
     let currentIndex = 0;
@@ -173,6 +178,7 @@ function startColorEffect() {
     }, 2000);
 }
 
+// Função para iniciar o confete
 function startConfetti() {
     confetti({
         particleCount: 200,
@@ -181,6 +187,7 @@ function startConfetti() {
     });
 }
 
+// Função para alterar a cor do fundo
 function color(input) {
     const inputValue = input.value.toLowerCase().trim();
     const corTraduzida = traducaoCores[inputValue];
@@ -194,19 +201,19 @@ function color(input) {
     }
 }
 
-
+// Função para redefinir a cor de fundo para branco
 function resetBackgroundColor() {
     document.body.style.transition = "background-color 1s ease";
     document.body.style.backgroundColor = "white";
 }
 
+// Tradução de mensagens
 const traducaoMensagens = {
     "party": "Have fun! ;)",
     "festa": "Se divirta! ;)",
 };
 
-document.body.style.transition = "background-color 1s ease";
-
+// Adicionando eventos de entrada para o input de cor
 const input = document.getElementById('colorInput');
 
 input.addEventListener('input', function () {
