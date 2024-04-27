@@ -123,7 +123,7 @@ const traducaoCores = {
     "🟫": "#8B4513",   
     "⬛": "#000000",    
     "⬜": "#FFFFFF"    
-};
+}
 
 // Funções de abertura e fechamento do modal
 function openModal() {
@@ -176,6 +176,35 @@ function startColorEffect() {
         document.body.style.transition = "background-color 1s ease"; 
         document.body.style.backgroundColor = "white"; 
     }, 2000);
+}
+
+// Função para efeito policial
+let mixInterval;
+
+function mixColors(input) {
+    const inputValue = input.value.toLowerCase().trim();
+
+    if (inputValue.includes('cop') || inputValue.includes('police') || inputValue.includes('policial')) {
+        let currentIndex = 0;
+        clearInterval(mixInterval);
+        
+        mixInterval = setInterval(function() {
+            document.body.style.transition = "background-color 0.3s ease";
+            document.body.style.backgroundColor = currentIndex === 0 ? "red" : "blue";
+            currentIndex = (currentIndex + 1) % 2;
+        }, 200); 
+        
+        const sirenSound = document.getElementById('siren-sound');
+        sirenSound.play();
+        
+        setTimeout(function() {
+            clearInterval(mixInterval);
+            document.body.style.transition = "background-color 1s ease";
+            document.body.style.backgroundColor = "white";
+            sirenSound.pause();
+        }, 7400);
+    } else {
+    }
 }
 
 // Função para iniciar o confete
