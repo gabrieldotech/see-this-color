@@ -294,6 +294,6 @@ input.addEventListener('input', function () {
             this.classList.remove('transition-out', 'transition-in');
         }, 300); 
     } else {
-        mixColors(this); // Chamada para a nova função mixColors
+        mixColors(this);
     }
 });
