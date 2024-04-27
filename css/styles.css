@@ -227,11 +227,6 @@ body, html {
     animation: animate-text 0.5s ease forwards 0.1s;
 }
 
-.new {
-    font-weight: bold;
-}
-
-
 .btn-secondary {
     padding: 0.313rem 2rem; 
     border-radius: 20px;
