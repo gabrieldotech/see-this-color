@@ -136,6 +136,18 @@ function closeModal() {
     modal.classList.remove('mostrar');
 }
 
+// Funções de abertura e fechamento do modal 2
+function openSugestaoModal() {
+    const modal = document.getElementById('sugestao-modal-container');
+    modal.classList.add('mostrar2');
+}
+
+function closeSugestaoModal() {
+    const modal = document.getElementById('sugestao-modal-container');
+    modal.classList.remove('mostrar2');
+}
+
+
 // Evento de para inicializar a funcionalidade do seletor de cores
 document.addEventListener('DOMContentLoaded', function() {
     const colorPicker = document.getElementById('colorPicker');
@@ -178,34 +190,48 @@ function startColorEffect() {
     }, 2000);
 }
 
-// Função para efeito policial
+// Função efeito policial
 let mixInterval;
 
 function mixColors(input) {
     const inputValue = input.value.toLowerCase().trim();
 
-    if (inputValue.includes('cop') || inputValue.includes('police') || inputValue.includes('policial')) {
-        let currentIndex = 0;
+    function resetBackground() {
         clearInterval(mixInterval);
-        
+        document.body.style.transition = "background-color 1s ease";
+        document.body.style.backgroundColor = "white";
+    }
+
+    function startMixEffect() {
+        let currentIndex = 0;
         mixInterval = setInterval(function() {
             document.body.style.transition = "background-color 0.3s ease";
             document.body.style.backgroundColor = currentIndex === 0 ? "red" : "blue";
             currentIndex = (currentIndex + 1) % 2;
         }, 200); 
         
-        const sirenSound = document.getElementById('siren-sound');
-        sirenSound.play();
-        
         setTimeout(function() {
             clearInterval(mixInterval);
-            document.body.style.transition = "background-color 1s ease";
-            document.body.style.backgroundColor = "white";
-            sirenSound.pause();
-        }, 7400);
+            resetBackground(); 
+        }, 2000);
+    }
+
+    if (inputValue.includes('cop') || inputValue.includes('police') || inputValue.includes('policial')) {
+        resetBackground();
+        startMixEffect(); 
     } else {
+        resetBackground(); 
     }
 }
+
+
+const colorInput = document.getElementById('colorInput');
+
+colorInput.addEventListener('change', function () {
+    mixColors(this);
+});
+
+
 
 // Função para iniciar o confete
 function startConfetti() {
@@ -268,6 +294,6 @@ input.addEventListener('input', function () {
             this.classList.remove('transition-out', 'transition-in');
         }, 300); 
     } else {
-        mixColors(this);
+        mixColors(this); // Chamada para a nova função mixColors
     }
 });
