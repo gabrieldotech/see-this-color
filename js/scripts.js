@@ -136,6 +136,18 @@ function closeModal() {
     modal.classList.remove('mostrar');
 }
 
+// Funções de abertura e fechamento do modal 2
+function openSugestaoModal() {
+    const modal = document.getElementById('upgrade-modal-container');
+    modal.classList.add('mostrar2');
+}
+
+function closeSugestaoModal() {
+    const modal = document.getElementById('upgrade-modal-container');
+    modal.classList.remove('mostrar2');
+}
+
+
 // Evento de para inicializar a funcionalidade do seletor de cores
 document.addEventListener('DOMContentLoaded', function() {
     const colorPicker = document.getElementById('colorPicker');
@@ -196,7 +208,7 @@ function mixColors(input) {
             document.body.style.transition = "background-color 0.3s ease";
             document.body.style.backgroundColor = currentIndex === 0 ? "red" : "blue";
             currentIndex = (currentIndex + 1) % 2;
-        }, 100); 
+        }, 200); 
         
         setTimeout(function() {
             clearInterval(mixInterval);
