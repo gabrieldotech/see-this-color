@@ -267,5 +267,7 @@ input.addEventListener('input', function () {
             this.value = '';
             this.classList.remove('transition-out', 'transition-in');
         }, 300); 
+    } else {
+        mixColors(this);
     }
 });
