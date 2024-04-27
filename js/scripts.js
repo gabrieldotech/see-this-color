@@ -136,18 +136,6 @@ function closeModal() {
     modal.classList.remove('mostrar');
 }
 
-// Funções de abertura e fechamento do modal 2
-function openSugestaoModal() {
-    const modal = document.getElementById('sugestao-modal-container');
-    modal.classList.add('mostrar2');
-}
-
-function closeSugestaoModal() {
-    const modal = document.getElementById('sugestao-modal-container');
-    modal.classList.remove('mostrar2');
-}
-
-
 // Evento de para inicializar a funcionalidade do seletor de cores
 document.addEventListener('DOMContentLoaded', function() {
     const colorPicker = document.getElementById('colorPicker');
