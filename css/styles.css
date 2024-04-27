@@ -26,6 +26,7 @@ body, html {
     transition: all 0.3s ease-in-out;
 }
 
+
 .btn p {
     color: #353333;
     font-weight: bold;
@@ -159,6 +160,105 @@ body, html {
     display: flex;
 }
 
+/* Estilos do Segundo Modal */
+#upgrade-modal-container {
+    display: none;
+}
+
+#upgrade-modal-container.mostrar2 {
+    display: flex;
+}
+
+#upgrade-modal-container .modal {
+    /* Reutilize os estilos da classe .modal */
+    width: 60%;
+    min-width: 400px;
+    min-height: 200px;
+    background-color: #ffffff68;
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    padding: 2.5rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+#upgrade-modal-container .fechar {
+    /* Reutilize os estilos da classe .fechar */
+    top: 0.625rem;
+    right: 0.625rem; 
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff0000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+}
+
+#upgrade-modal-container h1 {
+    
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbowAnimation 1.8s infinite linear;
+    position: relative;
+}
+
+#upgrade-modal-container .modal p {
+    font-size: 1.75rem;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0;
+    transform: translateX(-50px); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+#upgrade-modal-container.mostrar2 .modal p {
+    animation: animate-text 0.5s ease forwards 0.1s;
+}
+
+.new {
+    font-weight: bold;
+}
+
+
+.btn-secondary {
+    padding: 0.313rem 2rem; 
+    border-radius: 20px;
+    border: 3px solid;
+    color: #111;
+    background-color: #fff;
+    font-size: 1rem; 
+    cursor: pointer;
+    position: absolute;
+    top: 1.25rem; 
+    right: 1.25rem;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary p {
+    color: #353333;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.1);
+}
+
+
+
 /* Estilos do Input */
 input {
     width: 100%;
@@ -238,15 +338,22 @@ input {
     }
 }
 
-@media only screen and (max-width: 64em) {
-    .btn {
-        top: 0.9375rem;
-        left: 0.9375rem;
+@media only screen and (min-width: 64em) {
+    .modal {
+        width: 70%;
+        max-width: 800px; 
+        padding: 3rem; 
+        font-size: 1.25rem;
     }
 
-    .modal {
-        width: 80%;
-        padding: 1.875rem;
+    .modal h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem; 
+    }
+
+    .modal p {
+        font-size: 1.5rem; 
+        margin-bottom: 1.5rem; 
     }
 
     .fechar {
@@ -257,6 +364,7 @@ input {
         font-size: 0.875rem;
     }
 }
+
 
 @media only screen and (max-width: 37.5em) and (orientation: portrait) {
     .btn {
@@ -285,4 +393,68 @@ input {
     .modal p {
         font-size: 1.125rem;
     }
+}
+
+@media only screen and (max-width: 37.5em) {
+    #upgrade-modal-container .modal {
+        width: 90%;
+        min-width: auto;
+        padding: 1.25rem;
+        font-size: 1rem;
+    }
+
+    #upgrade-modal-container .modal h1 {
+        font-size: 2rem;
+    }
+
+    #upgrade-modal-container .modal p {
+        font-size: 1.25rem;
+    }
+
+    #upgrade-modal-container .fechar {
+        top: 0.3125rem;
+        right: 0.3125rem;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media only screen and (max-width: 64em) {
+    #upgrade-modal-container .modal {
+        width: 80%;
+        padding: 1.875rem;
+    }
+
+    #upgrade-modal-container .fechar {
+        top: 0.625rem;
+        right: 0.625rem;
+        width: 1.875rem;
+        height: 1.875rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media only screen and (max-width: 37.5em) and (orientation: portrait) {
+    #upgrade-modal-container .modal {
+        width: 90%;
+        padding: 1.875rem;
+    }
+
+    #upgrade-modal-container .fechar {
+        top: 0.625rem;
+        right: 0.640rem;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        font-size: 0.75rem;
+    }
+
+    #upgrade-modal-container .modal h1 {
+        font-size: 2rem;
+    }
+
+    #upgrade-modal-container .modal p {
+        font-size: 1.125rem;
+    }
+    
 }
