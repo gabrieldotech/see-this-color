@@ -137,12 +137,12 @@ function closeModal() {
 }
 
 // Funções de abertura e fechamento do modal 2
-function openSugestaoModal() {
+function openUpgradeModal() {
     const modal = document.getElementById('upgrade-modal-container');
     modal.classList.add('mostrar2');
 }
 
-function closeSugestaoModal() {
+function closeUpgradeModal() {
     const modal = document.getElementById('upgrade-modal-container');
     modal.classList.remove('mostrar2');
 }
