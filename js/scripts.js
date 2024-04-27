@@ -196,7 +196,7 @@ function mixColors(input) {
             document.body.style.transition = "background-color 0.3s ease";
             document.body.style.backgroundColor = currentIndex === 0 ? "red" : "blue";
             currentIndex = (currentIndex + 1) % 2;
-        }, 200); 
+        }, 100); 
         
         setTimeout(function() {
             clearInterval(mixInterval);
