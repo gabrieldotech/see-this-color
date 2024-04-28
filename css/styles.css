@@ -11,7 +11,7 @@ body, html {
 }
 
 /* Estilos dos Botões */
-.btn, .btn-secondary, .btn3 {
+.btn, .btn-secondary {
     padding: 0.313rem 2rem;
     border-radius: 20px;
     border: 3px solid;
@@ -24,13 +24,13 @@ body, html {
     transition: all 0.3s ease-in-out;
 }
 
-.btn p, .btn-secondary p, .btn3 p {
+.btn p, .btn-secondary p {
     color: #353333;
     font-weight: bold;
     opacity: 0.8;
 }
 
-.btn:hover, .btn-secondary:hover, .btn3:hover {
+.btn:hover, .btn-secondary:hover {
     transform: scale(1.1);
 }
 
@@ -44,14 +44,8 @@ body, html {
     right: 1.25rem;
 }
 
-.btn3 {
-    top: 1.25rem;
-    left: 50%;
-    margin-left: -80px;
-}
-
 /* Estilos dos Containers Modais */
-.modal-container, #upgrade-modal-container, #developer-modal-container {
+.modal-container, #upgrade-modal-container {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -65,7 +59,7 @@ body, html {
 }
 
 /* Estilos dos Modais */
-.modal, #upgrade-modal-container .modal, #developer-modal-container .modal-3 {
+.modal, #upgrade-modal-container .modal {
     width: 60%;
     min-width: 400px;
     min-height: 200px;
@@ -98,7 +92,7 @@ body, html {
 }
 
 /* Estilos do Título do Modal */
-.modal h1, #upgrade-modal-container .modal h1, #developer-modal-container .modal-3 h1 {
+.modal h1, #upgrade-modal-container .modal h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
@@ -112,7 +106,7 @@ body, html {
 }
 
 /* Estilos do Parágrafo do Modal */
-.modal p, #upgrade-modal-container .modal p, #developer-modal-container .modal-3 p {
+.modal p, #upgrade-modal-container .modal p {
     font-size: 1.75rem;
     font-family: Arial, Helvetica, sans-serif;
     opacity: 0;
@@ -121,17 +115,17 @@ body, html {
 }
 
 /* Animação do Texto do Modal */
-.mostrar .modal p, #upgrade-modal-container.mostrar2 .modal p, #developer-modal-container.mostrar .modal-3 p {
+.mostrar .modal p, #upgrade-modal-container.mostrar2 .modal p {
     animation: animate-text 0.5s ease forwards 0.1s;
 }
 
 /* Mostrar o Container do Modal */
-.modal-container.mostrar, #upgrade-modal-container.mostrar2, #developer-modal-container.mostrar {
+.modal-container.mostrar, #upgrade-modal-container.mostrar2 {
     display: flex;
 }
 
 /* Animação de Mostrar o Modal */
-.mostrar .modal, #upgrade-modal-container.mostrar2 .modal, #developer-modal-container.mostrar .modal-3 {
+.mostrar .modal, #upgrade-modal-container.mostrar2 .modal {
     animation: animate-modal .3s;
 }
 
