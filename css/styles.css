@@ -155,7 +155,7 @@ body, html {
 }
 
 /* Estilos do Container */
-.container {
+.input-container {
     align-items: center;
     display: flex;
 }
@@ -294,7 +294,7 @@ input {
 
 /* Media Queries */
 @media only screen and (max-width: 37.5em) {
-    .container {
+    .input-container {
         width: 90%;
         max-width: none;
     }
