@@ -3,42 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veja essa cor!</title>
+    <title>Not Allowed</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon " href="img/rainbow_image.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="img/logo.png">
 </head>
 <body>
-    <nav>
-        <div onclick="openModal()" class="btn"><p>Sobre</p></div>
-        <div id="modal-container" class="modal-container">
-            <div class="modal">
-                <button class="fechar" id="fechar" onclick="closeModal()">X</button>
-                <h1>Bem-vindo!</h1>
-                <p>Seja bem-vindo ao nosso seletor de cores! Aqui você pode escolher as cores de fundo digitando o nome da cor em inglês, português ou até mesmo o código hexadecimal da cor.</p>
-                <p>Além disso, temos uma surpresa especial! Se você digitar as palavras-chave "party" ou "festa", uma animação divertida será acionada para tornar a sua experiência ainda melhor!</p>
-                <p>Experimente agora mesmo e divirta-se!</p>
-                <strong><p>Obs: O botão da paleta de cores só está disponível para dispositivos android e desktop no momento.</p></strong>
+    <div class="container">
+        <nav>
+            <i class="fas fa-chevron-down arrow-down"></i>
+            <h3>TOCANDO MÚSICA</h3>
+            <i class="fas fa-ellipsis-v ellipsis"></i>
+        </nav>
+        <div class="content">
+            <img class="imagem" src="img/not allowed.jpeg" alt="">
+            <div class="artist-information">
+                <h2 class="song-title">Not Allowed</h2>
+                <div class="about">
+                    <span class="square">E</span>
+                    <p class="artist">TV Girl</p>
+                    <i class="fas fa-check play-icon"></i>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <input type="range" id="music-progress" min="0" max="100" value="0">
+                <div class="progress-time progress-time-start">0:00</div>
+                <div class="progress-time progress-time-end">0:00</div>
+            </div>
+            <div class="control-buttons">
+                <i class="fas fa-backward"></i>
+                <i class="fas fa-play"></i>
+                <i class="fas fa-forward"></i>
+            </div>
+            <div class="btns">
+                <button id="lyricsButton">
+                    <i class="fas fa-music"></i>
+                </button>
+                <button id="repeatToggle" class="repeat-toggle">
+                    <i class="fas fa-sync"></i>
+                </button>
             </div>
         </div>
-        <div onclick="openUpgradeModal()" class="btn-secondary"><p>Upgrades</p></div>
-        <div id="upgrade-modal-container" class="modal-container">
-            <div class="modal">
-                <button class="fechar" onclick="closeUpgradeModal()">X</button>
-                <h1>Atualizações</h1>
-                <p>Agora, ao digitar <strong>"policial",</strong> <strong> "cop"</strong> ou <strong>"police"</strong>, você verá um mix das cores vermelha e azul no fundo, dando um toque especial!</p>
-                <p>Além disso, adicionamos suporte para emojis de coração que refletem as cores do coração no fundo. Experimente também emojis de cores quadradas e redondas para ver a mágica acontecer!</p>
+        <div id="lyricsModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <div id="lyricsText"></div>
             </div>
-        </div>
-    </nav>
-    <section>
-        <div class="input-container">
-            <input id="colorInput" placeholder="Escolha uma cor" spellcheck="false" autocomplete="off" onkeyup="color(this)" type="text">
-            <input type="color" id="colorPicker" style="display: none;">
-            <label for="colorPicker" class="color-picker-btn"><i class="fas fa-palette"></i></label>
-        </div>
-    </section>
-    <script src="js/scripts.js"></script>  
+          </div>          
+    </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
